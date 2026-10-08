@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Download Sidra - Linux, macOS and Windows</title>
+  <meta name="description" content="Download Sidra for Linux (AppImage, deb, rpm, Snap, AUR, Nix), macOS (DMG) and Windows (installer).">
+  <meta name="theme-color" content="#3b0e1f">
+  <link rel="canonical" href="https://wimpysworld.github.io/sidra/download.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sidra">
+  <meta property="og:title" content="Download Sidra">
+  <meta property="og:description" content="Sidra for Linux, macOS and Windows.">
+  <meta property="og:url" content="https://wimpysworld.github.io/sidra/download.html">
+  <meta property="og:image" content="https://wimpysworld.github.io/sidra/images/sidra-screenshot.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>(function(){var d=document.documentElement;d.classList.add("js");try{var t=localStorage.getItem("sidra-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";d.dataset.theme=t}catch(e){d.dataset.theme="dark"}})()</script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-release>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="index.html"><img src="images/logo-64.png" alt="" width="34" height="34"><span>Sidra</span></a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html#features">Features</a>
+        <a href="download.html" aria-current="page">Download</a>
+        <a href="docs.html">Documentation</a>
+        <a href="https://github.com/sponsors/flexiondotorg">Sponsor</a>
+      </nav>
+      <div class="bar-actions">
+        <a class="icon-btn" href="https://github.com/wimpysworld/sidra" aria-label="Sidra on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch between light and dark"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm0 1.5v13a6.5 6.5 0 0 1 0-13Z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap page">
+      <div class="prose">
+        <h1>Download Sidra</h1>
+        <p class="intro">Grab the latest release from <a href="https://github.com/wimpysworld/sidra/releases">GitHub Releases</a>.</p>
+
+        <div class="release">
+          <div class="release-head">
+            <h3>Latest release <span data-release-version></span></h3>
+            <span><span data-release-date></span> &middot; <a href="https://github.com/wimpysworld/sidra/releases/latest" data-release-notes>Release notes</a></span>
+          </div>
+          <p>Choose your platform below. Every file links straight to the release.</p>
+        </div>
+
+        <div class="note">
+          <p><strong>Unsigned releases.</strong> Sidra's macOS and Windows releases are currently unsigned, requiring Gatekeeper and SmartScreen workarounds at install time. <a href="https://github.com/sponsors/flexiondotorg">Sponsoring the project</a> 🩷 goes directly towards code-signing certificates to remove that friction for every user.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Platform">
+          <button class="tab" role="tab" id="tab-linux" data-tab="linux" aria-controls="linux" aria-selected="true">🐧 Linux</button>
+          <button class="tab" role="tab" id="tab-mac" data-tab="mac" aria-controls="mac" aria-selected="false" tabindex="-1">🍏 macOS</button>
+          <button class="tab" role="tab" id="tab-win" data-tab="win" aria-controls="win" aria-selected="false" tabindex="-1">🪟 Windows</button>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="linux" aria-labelledby="tab-linux">
+          <h3>Linux</h3>
+          <ul class="assets" data-assets="linux">
+            <li><a href="https://github.com/wimpysworld/sidra/releases/latest">Browse the Linux files on GitHub Releases</a></li>
+          </ul>
+          <p>Linux builds ship for x86_64 and arm64. Pick the file that matches your CPU: <code>Sidra-linux-x86_64.AppImage</code> or <code>Sidra-linux-arm64.AppImage</code>, <code>-linux-amd64.deb</code> or <code>-linux-arm64.deb</code>, <code>.x86_64.rpm</code> or <code>.aarch64.rpm</code>. The arm64 builds are made natively on <code>ubuntu-24.04-arm</code> runners and update from the release like the x86_64 ones. The snap is published for both, so <code>snap install sidra</code> picks the right one.</p>
+
+          <h3>AppImage</h3>
+          <p>On Debian 13 (Trixie) and Ubuntu 24.04 or newer, install the AppImage FUSE dependency first:</p>
+          <div class="code"><pre>sudo apt install libfuse2t64</pre></div>
+          <p>Runs anywhere, no installation:</p>
+          <div class="code"><pre>chmod +x Sidra-*.AppImage &amp;&amp; ./Sidra-*.AppImage</pre></div>
+
+          <h3>Debian/Ubuntu</h3>
+          <p>Use the <code>.deb</code> package unless you need AppImage:</p>
+          <div class="code"><pre>sudo apt install ./Sidra-*.deb</pre></div>
+
+          <h3>Fedora/openSUSE</h3>
+          <div class="code"><pre>sudo dnf install ./Sidra-*.rpm      # Fedora
+sudo zypper install ./Sidra-*.rpm   # openSUSE</pre></div>
+
+          <h3>Snap</h3>
+          <p>Ubuntu and other snapd-enabled distributions:</p>
+          <div class="code"><pre>sudo snap install sidra</pre></div>
+
+          <h3>AUR</h3>
+          <p>Arch Linux and derivatives:</p>
+          <div class="code"><pre>yay -S sidra-bin</pre></div>
+
+          <h3>Nix</h3>
+          <p>With flakes enabled, install Sidra for your user:</p>
+          <div class="code"><pre>nix profile add github:wimpysworld/sidra</pre></div>
+          <p>For NixOS or Home Manager, add Sidra to your <code>flake.nix</code> inputs:</p>
+          <div class="code"><pre>inputs.sidra.url = "github:wimpysworld/sidra";</pre></div>
+
+          <h3>NixOS</h3>
+          <div class="code"><pre>environment.systemPackages = [
+  inputs.sidra.packages.${pkgs.stdenv.hostPlatform.system}.default
+];</pre></div>
+
+          <h3>Home Manager</h3>
+          <div class="code"><pre>home.packages = [
+  inputs.sidra.packages.${pkgs.stdenv.hostPlatform.system}.default
+];</pre></div>
+          <p>These module snippets need <code>inputs</code> in their function arguments, passed through NixOS <code>specialArgs</code> or Home Manager <code>extraSpecialArgs</code>. For Home Manager inside NixOS, use <code>home-manager.extraSpecialArgs</code>.</p>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="mac" aria-labelledby="tab-mac">
+          <h3>macOS</h3>
+          <ul class="assets" data-assets="mac">
+            <li><a href="https://github.com/wimpysworld/sidra/releases/latest">Browse the macOS files on GitHub Releases</a></li>
+          </ul>
+          <p><strong>DMG</strong> - open and drag Sidra to Applications.</p>
+          <div class="note">
+            <p><strong>First launch.</strong> macOS may report: <em>"Sidra.app" is damaged and can't be opened. You should move it to the Bin.</em> The app is unsigned, not corrupt. macOS shows this because the download is quarantined.</p>
+          </div>
+          <p>Strip the quarantine attribute in Terminal, then open Sidra normally:</p>
+          <div class="code"><pre>xattr -dr com.apple.quarantine /Applications/Sidra.app</pre></div>
+          <p>System Settings → Privacy &amp; Security only offers <strong>Open Anyway</strong> for the milder "unidentified developer" prompt, never for "damaged" - so Terminal is the dependable path.</p>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="win" aria-labelledby="tab-win">
+          <h3>Windows</h3>
+          <ul class="assets" data-assets="win">
+            <li><a href="https://github.com/wimpysworld/sidra/releases/latest">Browse the Windows files on GitHub Releases</a></li>
+          </ul>
+          <p><strong>Installer</strong> (<code>.exe</code>) - run the setup wizard. It defaults to an installation for your user, lets you choose an installation for all users, and lets you select the installation directory.</p>
+          <p>SmartScreen will warn the installer is unsigned. Click <strong>More info</strong> then <strong>Run anyway</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <div>
+        <p><strong>Sidra</strong> &middot; Copyright &copy; Martin Wimpress</p>
+        <p>Released under the <a href="https://github.com/wimpysworld/sidra/blob/main/LICENSE">Blue Oak Model License 1.0.0</a>.</p>
+      </div>
+      <ul>
+        <li><a href="https://github.com/wimpysworld/sidra">GitHub</a></li>
+        <li><a href="https://github.com/wimpysworld/sidra/releases">Releases</a></li>
+        <li><a href="https://github.com/wimpysworld/sidra/issues">Issues</a></li>
+        <li><a href="https://github.com/wimpysworld/sidra/blob/main/CONTRIBUTING.md">Contributing</a></li>
+        <li><a href="https://github.com/wimpysworld/sidra/blob/main/SUPPORT.md">Support</a></li>
+        <li><a href="https://github.com/wimpysworld/sidra/blob/main/SECURITY.md">Security</a></li>
+        <li><a href="https://github.com/wimpysworld/sidra/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+        <li><a href="https://github.com/sponsors/flexiondotorg">Sponsor</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

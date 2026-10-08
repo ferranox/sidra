@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sidra documentation - Settings, themes, controller, Last.fm and more</title>
+  <meta name="description" content="How to use Sidra: settings, notifications, custom themes, controller navigation, Last.fm scrobbling, how it works, and building from source.">
+  <meta name="theme-color" content="#3b0e1f">
+  <link rel="canonical" href="https://wimpysworld.github.io/sidra/docs.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sidra">
+  <meta property="og:title" content="Sidra documentation">
+  <meta property="og:description" content="Settings, themes, controller navigation, Last.fm scrobbling and how Sidra works.">
+  <meta property="og:url" content="https://wimpysworld.github.io/sidra/docs.html">
+  <meta property="og:image" content="https://wimpysworld.github.io/sidra/images/sidra-screenshot.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>(function(){var d=document.documentElement;d.classList.add("js");try{var t=localStorage.getItem("sidra-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";d.dataset.theme=t}catch(e){d.dataset.theme="dark"}})()</script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="index.html"><img src="images/logo-64.png" alt="" width="34" height="34"><span>Sidra</span></a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html#features">Features</a>
+        <a href="download.html">Download</a>
+        <a href="docs.html" aria-current="page">Documentation</a>
+        <a href="https://github.com/sponsors/flexiondotorg">Sponsor</a>
+      </nav>
+      <div class="bar-actions">
+        <a class="icon-btn" href="https://github.com/wimpysworld/sidra" aria-label="Sidra on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch between light and dark"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm0 1.5v13a6.5 6.5 0 0 1 0-13Z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap docs">
+      <aside class="toc">
+        <nav aria-label="On this page">
+          <h2>On this page</h2>
+          <ul>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#notifications">Notifications</a></li>
+            <li><a href="#theming">Theming</a></li>
+            <li><a href="#custom-theme">Custom theme</a></li>
+            <li><a href="#controller">Controller navigation</a></li>
+            <li><a href="#lastfm">Last.fm scrobbling</a></li>
+            <li><a href="#mini-player">Mini Player</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#development">Development</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <article class="prose">
+        <h1>Documentation</h1>
+        <p class="intro">Everything you need to get the most from Sidra.</p>
+
+        <section id="settings">
+          <h2>Settings</h2>
+          <p>Open <strong>Settings</strong> with the gear button beside Back, Forward and Reload. With the player focused, press <kbd>Ctrl</kbd>+<kbd>,</kbd> on Linux or Windows, or <kbd>Cmd</kbd>+<kbd>,</kbd> on macOS.</p>
+          <p>The resizable window contains player, start page, style, zoom, close-to-tray, notification, Discord and Last.fm preferences. Changes save immediately. The existing tray preferences remain available.</p>
+          <img class="inline narrow" src="images/sidra-settings.png" width="754" height="824" loading="lazy" alt="The Sidra Settings window">
+        </section>
+
+        <section id="notifications">
+          <h2>Notifications</h2>
+          <p>Track notifications show artwork and let you select <strong>Play/Pause</strong>, <strong>Previous</strong> or <strong>Next</strong> without opening Sidra. Click the notification body to show the player.</p>
+          <p>The playback button follows the current state. State changes do not reopen a dismissed notification. New tracks and radio songs replace the previous playback announcement. On Linux, Sidra requests transient notifications, so history retention depends on the notification service.</p>
+          <p>On Linux, the controls and body click require a notification service that supports actions. On macOS, the controls require a signed app and alert-style notifications. The current unsigned macOS releases do not meet that requirement.</p>
+        </section>
+
+        <section id="theming">
+          <h2>Theming</h2>
+          <p>Choose <strong>Style</strong> in Settings. Sidra ships with <strong>Catppuccin</strong>, <strong>Dracula</strong>, <strong>Everforest</strong>, <strong>Gruvbox</strong>, <strong>Nord</strong>, <strong>Rosé Pine</strong>, <strong>Solarized</strong>, and <strong>Tokyo Night</strong>, plus the default <strong>Apple Music</strong> styling.</p>
+          <p>Your chosen theme applies to Apple Music, Apple Music Classical and Settings. See the <a href="index.html#themes">theme gallery</a> for examples.</p>
+
+          <h3 id="custom-theme">Custom theme</h3>
+          <p>Copy <a href="https://github.com/wimpysworld/sidra/blob/main/docs/custom-theme.json">custom-theme.json</a> to Sidra's user data directory, then edit its colours:</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Platform</th><th>File</th></tr></thead>
+              <tbody>
+                <tr><td>Linux</td><td><code>~/.config/Sidra/custom-theme.json</code></td></tr>
+                <tr><td>macOS</td><td><code>~/Library/Application Support/Sidra/custom-theme.json</code></td></tr>
+                <tr><td>Windows</td><td><code>%APPDATA%\Sidra\custom-theme.json</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>On Linux, a set <code>XDG_CONFIG_HOME</code> replaces <code>~/.config</code>.</p>
+          <p>A valid file adds one <strong>Custom Theme</strong> choice under <strong>Style</strong> in Settings. Select it once. Saved edits apply without a restart, including in an open Settings window.</p>
+          <p>The example contains all 12 required colours in <code>dark</code>:</p>
+          <div class="code"><pre>{
+  "dark": {
+    "base": "#1e1e2e",
+    "mantle": "#181825",
+    "crust": "#11111b",
+    "surface0": "#313244",
+    "surface1": "#45475a",
+    "surface2": "#585b70",
+    "overlay": "#6c7086",
+    "text": "#cdd6f4",
+    "subtext1": "#bac2de",
+    "subtext0": "#a6adc8",
+    "accent": "#f38ba8",
+    "accentHover": "#eba0ac"
+  }
+}</pre></div>
+          <p>Use six-digit hex colours, such as <code>#1e1e2e</code>. JSON requires double quotes and accepts no comments or trailing commas. For a separate light scheme, add a <code>light</code> object with the same 12 keys. Without it, Sidra uses <code>dark</code> in both modes.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Keys</th><th>Colour role</th></tr></thead>
+              <tbody>
+                <tr><td><code>base</code>, <code>mantle</code>, <code>crust</code></td><td>Page, player and footer backgrounds</td></tr>
+                <tr><td><code>surface0</code>, <code>surface1</code>, <code>surface2</code></td><td>Controls, scrollbars and borders</td></tr>
+                <tr><td><code>text</code>, <code>subtext1</code>, <code>subtext0</code>, <code>overlay</code></td><td>Primary, secondary, emphasised secondary and tertiary text</td></tr>
+                <tr><td><code>accent</code>, <code>accentHover</code></td><td>Highlight colour and its hover or pressed state</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Sidra accepts low-contrast palettes without adjustment. Choose colours that you can read comfortably. Custom themes change colours only, not fonts or layout.</p>
+          <p>If the file is missing, unreadable or invalid, <strong>Custom Theme</strong> disappears and an active custom theme falls back to <strong>Apple Music</strong>. Fix or restore the file to recover the theme automatically, unless you selected another style.</p>
+          <p><strong>Migrating from custom CSS:</strong> Sidra ignores existing <code>custom.css</code> files but leaves them untouched. Copy your colours into the JSON example. Sidra cannot automatically convert arbitrary CSS, and CSS rules no longer apply.</p>
+        </section>
+
+        <section id="controller">
+          <h2>Controller navigation</h2>
+          <p>Sidra supports controllers that expose the browser's standard Gamepad mapping. The controls work in Apple Music and Apple Music Classical:</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Controller input</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td>D-pad</td><td>Move up, down, left, or right</td></tr>
+                <tr><td>A button</td><td>Select the focused item</td></tr>
+                <tr><td>B button</td><td>Go back when navigation history permits</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Hold a D-pad direction to repeat it. The A and B buttons act once per press. Controller input does not control media playback or settings.</p>
+        </section>
+
+        <section id="lastfm">
+          <h2>Last.fm scrobbling</h2>
+          <p>Nothing is sent to Last.fm until you connect an account. In Settings, choose <strong>Connect to Last.fm…</strong>, then approve Sidra in your browser. Settings and the tray show your username after approval. Sidra also sends a notification if notifications are on.</p>
+          <p>Use Settings or the tray <strong>Last.fm</strong> submenu to turn scrobbling on or off, or disconnect. You can also connect through that submenu. Sidra sends the now-playing track when playback starts or resumes, and scrobbles it once it has played for half its length or four minutes, whichever comes first. Tracks of 30 seconds or less never scrobble - that is Last.fm's rule, not Sidra's. When a scrobble cannot reach Last.fm, Sidra holds the play and sends it with the next one that gets through, so a dropped connection does not cost you it.</p>
+          <p>Sidra also scrobbles individual songs from live radio and archived shows. Radio songs have no reported duration, so they scrobble after four minutes of active playback. A song can scrobble at the next confirmed song change if Sidra observed its start and more than 30 seconds of playback. The first song joined part-way through uses the four-minute fallback.</p>
+          <p>Connecting stores a Last.fm session key and your username in Sidra's configuration file, in plain text:</p>
+          <ul>
+            <li>Linux: <code>~/.config/Sidra/config.json</code></li>
+            <li>macOS: <code>~/Library/Application Support/Sidra/config.json</code></li>
+            <li>Windows: <code>%APPDATA%\Sidra\config.json</code></li>
+          </ul>
+          <div class="note">
+            <p><strong>Session keys never expire.</strong> The Last.fm API has no call to revoke one. <strong>Disconnect</strong> deletes Sidra's copy of the key, which stops this installation scrobbling, but only Last.fm can invalidate the key itself. Remove Sidra under <a href="https://www.last.fm/settings/applications">Applications in your Last.fm settings</a> to do that. Sidra notices the revoked session on its next request, disconnects, and tells you.</p>
+          </div>
+          <p>What Sidra sends is listed in <a href="https://github.com/wimpysworld/sidra/blob/main/docs/LASTFM-PRIVACY.md">LASTFM-PRIVACY.md</a>.</p>
+        </section>
+
+        <section id="mini-player">
+          <h2>Mini Player</h2>
+          <p>Sidra ships no mini player and does not need one. Christian Lauinger (<a href="https://github.com/ChrisLauinger77">@ChrisLauinger77</a>) asked for one in <a href="https://github.com/wimpysworld/sidra/issues/125">#125</a>, then built <a href="https://github.com/ChrisLauinger77/mpris-miniplayer"><strong>MPRIS MiniPlayer</strong></a>: a small GTK4/libadwaita window that controls any MPRIS player on Linux.</p>
+          <p>It pairs beautifully with <strong>Close to tray</strong>. Hide the Sidra window, keep the mini player on top, and place it anywhere on your desktop. Thank you, Christian 🙏</p>
+        </section>
+
+        <section id="how-it-works">
+          <h2>How it works</h2>
+          <p>Sidra loads <code>music.apple.com</code> directly inside CastLabs Electron (required for Widevine DRM on Linux - no other shell supports this). A lightweight hook script is injected after page load that taps <code>MusicKit.getInstance()</code> events and forwards them over Electron IPC to the main process, which distributes them to platform integrations.</p>
+          <pre class="plain">music.apple.com
+  └── MusicKit.js events
+        └── musicKitHook.js (injected)
+              └── IPC → player.ts (EventEmitter)
+                    ├── MPRIS (Linux, dbus-next, D-Bus session bus)
+                    ├── Discord Rich Presence
+                    ├── Last.fm scrobbling
+                    ├── Desktop notifications
+                    ├── navigator.mediaSession (macOS/Windows)
+                    ├── Dock menu + progress bar (macOS)
+                    └── Taskbar toolbar + overlay + progress bar (Windows)</pre>
+          <p>Controls flow in reverse: MPRIS sends typed IPC commands through the isolated preload to <code>window.__sidra</code>, which calls MusicKit.</p>
+          <p>The codebase is tightly focused and as lean as possible. See <a href="https://github.com/wimpysworld/sidra/blob/main/docs/SPECIFICATION.md">SPECIFICATION.md</a> for full technical detail: architecture, IPC event flow, MPRIS property checklist, platform media control implementation, and the complete feature inventory.</p>
+        </section>
+
+        <section id="development">
+          <h2>Development</h2>
+          <p>Requires <a href="https://nixos.org/">Nix</a> with flakes enabled. <a href="https://direnv.net/">direnv</a> is recommended. The project uses npm and TypeScript with <a href="https://github.com/castlabs/electron-releases">CastLabs Electron</a> (<code>wvcus</code> variant) - standard Electron cannot be substituted as it lacks Widevine DRM support on Linux.</p>
+          <div class="code"><pre>direnv allow          # or: nix develop
+just install          # install npm dependencies
+just run              # build and launch</pre></div>
+          <p>Sign in on first launch; your session persists across relaunches. Run <code>just</code> with no arguments to list all available recipes for building, testing, debugging, and diagnostics.</p>
+          <p>Run <code>just generate-assets</code> to regenerate application icons, the logo, DMG backgrounds, tray icons and menu icons from SVG sources. The command also composes the README image from screenshots.</p>
+
+          <h3>NixOS</h3>
+          <p>The dev shell puts the libraries CastLabs Electron needs on <code>LD_LIBRARY_PATH</code>, but the host must supply the ELF interpreter. The npm-installed Electron is a prebuilt binary that requests <code>/lib64/ld-linux-x86-64.so.2</code>, a path plain NixOS does not provide. Enable <a href="https://github.com/nix-community/nix-ld">nix-ld</a> (<code>programs.nix-ld.enable = true;</code>) or an equivalent compatibility loader before running <code>just run</code>. Do not patch the Electron binary with <code>patchelf</code>: it is EVS-signed, and patching invalidates the signature.</p>
+
+          <h3>Widevine VMP signing</h3>
+          <p>Widevine enforces VMP (Verified Media Path) production signing on macOS and Windows - without it, Apple Music returns "Something went wrong" after login. CastLabs ECS ships with development keys; production signing requires a free <a href="https://github.com/castlabs/electron-releases/wiki/EVS">CastLabs EVS</a> account.</p>
+          <p>One-time setup:</p>
+          <div class="code"><pre>uvx --from castlabs-evs evs-account signup</pre></div>
+          <p>Credentials are stored at <code>~/.config/evs/config.json</code>. The account is portable - use <code>evs-account reauth</code> on any new machine. Alternatively, set <code>EVS_ACCOUNT_NAME</code> and <code>EVS_PASSWD</code> env vars (e.g. via sops-nix).</p>
+          <p><code>just install</code> and <code>just build</code> sign the local Electron binary automatically once credentials are in place. Release builds are signed via the <code>afterPack</code> hook in <code>build/afterPack.cjs</code>.</p>
+
+          <h3>Last.fm API credentials</h3>
+          <p>Official releases ship Last.fm API credentials. A build from this repository does not. Without credentials, Settings and the tray hide the Last.fm controls.</p>
+          <p>Register an API account at <a href="https://www.last.fm/api/account/create">last.fm/api/account/create</a>, then export the key and secret before building:</p>
+          <div class="code"><pre>export SIDRA_LASTFM_API_KEY=your-api-key
+export SIDRA_LASTFM_API_SECRET=your-shared-secret
+just run</pre></div>
+          <p>Environment variables win at runtime; the JSON file is the fallback that packaged builds use. That file is gitignored - the shared secret must never be committed. With neither variable set the build writes it empty, unless it already holds credentials, in which case it is left alone.</p>
+
+          <h3>Security</h3>
+          <p>Dependency security is tracked in the open. <a href="https://github.com/wimpysworld/sidra/security/dependabot">Dependabot alerts</a> carries the live state of every advisory affecting Sidra, and fixes are merged as they land. GitHub restricts that page to repository maintainers.</p>
+          <p>Private vulnerability reporting is enabled. To report a security issue, follow <a href="https://github.com/wimpysworld/sidra/blob/main/SECURITY.md">SECURITY.md</a> - your report stays between you and the maintainers until a fix ships.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <div>
+        <p><strong>Sidra</strong> &middot; Copyright &copy; Martin Wimpress</p>
+        <p>Released under the <a href="https://github.com/wimpysworld/sidra/blob/main/LICENSE">Blue Oak Model License 1.0.0</a>.</p>
+      </div>
+      <ul>
+        <li><a href="https://github.com/wimpysworld/sidra">GitHub</a></li>
+        <li><a href="https://github.com/wimpysworld/sidra/releases">Releases</a></li>
+        <li><a href="https://github.com/wimpysworld/sidra/issues">Issues</a></li>
+        <li><a href="https://github.com/wimpysworld/sidra/blob/main/CONTRIBUTING.md">Contributing</a></li>
+        <li><a href="https://github.com/wimpysworld/sidra/blob/main/SUPPORT.md">Support</a></li>
+        <li><a href="https://github.com/wimpysworld/sidra/blob/main/SECURITY.md">Security</a></li>
+        <li><a href="https://github.com/wimpysworld/sidra/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+        <li><a href="https://github.com/sponsors/flexiondotorg">Sponsor</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

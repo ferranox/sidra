@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wimpysworld.github.io/sidra/sitemap.xml

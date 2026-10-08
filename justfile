@@ -194,6 +194,26 @@ _generate-menu-icons:
         done
     done
 
+# The website reuses the repository images rather than committing a second copy of them
+# Copy shared images into website/images
+website-assets:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    out="website/images"
+    mkdir -p "$out"
+    cp build/icons/32x32.png "$out/favicon-32.png"
+    cp build/icons/64x64.png "$out/logo-64.png"
+    cp build/icons/256x256.png "$out/logo-256.png"
+    cp build/icons/256x256.png "$out/apple-touch-icon.png"
+    cp build/icons/512x512.png "$out/logo-512.png"
+    cp assets/sidra-screenshot.png "$out/"
+    cp assets/source/sidra-screenshot-0[1-4].png assets/source/sidra-screenshot-0[1-4]@2x.png "$out/"
+    cp assets/source/sidra-settings.png assets/source/linux-magazin-online.png "$out/"
+
+# Preview the website at http://localhost:8000
+website-serve PORT="8000": website-assets
+    python3 -m http.server --directory website {{PORT}}
+
 # Clean build artefacts
 clean:
     rm -rf dist/
